@@ -1,0 +1,110 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #29b4ff;
+}
+
+.wheel {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 20px solid #000000;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+
+.cabin {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgb(0, 255, 213);
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.spoke {
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  background: #000000;
+  top: 50%;
+  left: 50%;
+  transform-origin: top;
+}
+.spoke:nth-child(9) {
+  transform: rotate(0deg);
+}
+.spoke:nth-child(10) {
+  transform: rotate(45deg);
+}
+.spoke:nth-child(11) {
+  transform: rotate(90deg);
+}
+.spoke:nth-child(12) {
+  transform: rotate(135deg);
+}
+.spoke:nth-child(13) {
+  transform: rotate(180deg);
+}
+.spoke:nth-child(14) {
+  transform: rotate(225deg);
+}
+.spoke:nth-child(15) {
+  transform: rotate(270deg);
+}
+.spoke:nth-child(16) {
+  transform: rotate(315deg);
+}
+.cabin:nth-child(1) {
+  top: 50%;
+  left: 0%;
+}
+.cabin:nth-child(2) {
+  top: 15%;
+  left: 15%;
+}
+.cabin:nth-child(3) {
+  top: 0%;
+  left: 50%;
+}
+.cabin:nth-child(4) {
+  top: 15%;
+  left: 85%;
+}
+.cabin:nth-child(5) {
+  top: 50%;
+  left: 100%;
+}
+.cabin:nth-child(6) {
+  top: 85%;
+  left: 85%;
+}
+.cabin:nth-child(7) {
+  top: 100%;
+  left: 50%;
+}
+.cabin:nth-child(8) {
+  top: 85%;
+  left: 15%;
+}
+.wheel .cabin {
+  animation: cabin-spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cabin-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
